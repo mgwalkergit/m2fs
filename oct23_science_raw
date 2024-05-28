@@ -1,0 +1,25 @@
+ut20231005 0004 0007 0007 0006 standard1 0004-0005 standard.fibermap none std HD203638
+ut20231005 0008 0015 0015 0009-0014 tuc2_2022 0011-0012-0013 /hildafs/projects/phy200028p/mgwalker/m2fs/m2fs.astro.lsa.umich.edu/data/Oct2023/fibermaps/Tuc2_May2022-Tuc2_May2022-1b.fibermap R6-05>R8-15,R5-04>B5-15,B4-07>B8-16,B5-04>B5-16,B3-04>B1-03 tuc2
+ut20231005 0016 0021 0021 0016-0020 fornax10k_p2_f3 0018-0019 /hildafs/projects/phy200028p/mgwalker/m2fs/m2fs.astro.lsa.umich.edu/data/Oct2023/fibermaps/Plate2_For10k_2023B-plate2_field3_2023B-1b-fa8e31.fibermap none for
+ut20231005 0022 0032 0032 0022-0027-0031 fornax10k_p2_f1 0024-0025-0026-0029-0030 /hildafs/projects/phy200028p/mgwalker/m2fs/m2fs.astro.lsa.umich.edu/data/Oct2023/fibermaps/Plate2_For10k_2023B-plate2_field1_2023B-1b.fibermap none for
+ut20231005 0033 0039 0033 0034 twilight1 0036-0037-0038-0039 twilight.fibermap none twi
+ut20231006 0069 0072 0072 0071 standard2 0069-0070 standard.fibermap none std HD203638
+ut20231006 0073 0080 0080 0073-0079 fornax10k_p3_f1 0076-0077-0078 /hildafs/projects/phy200028p/mgwalker/m2fs/m2fs.astro.lsa.umich.edu/data/Oct2023/fibermaps/Plate3_For10k_2023B-plate3_field1_2023B-1b.fibermap none for
+ut20231006 0081 0087 0087 0081-0086 fornax10k_p2_f1 0083-0084-0085 /hildafs/projects/phy200028p/mgwalker/m2fs/m2fs.astro.lsa.umich.edu/data/Oct2023/fibermaps/Plate2_For10k_2023B-plate2_field1_2023B-1b.fibermap none for
+ut20231006 0088 0094 0089 0088 twilight2 0091-0092-0093-0094 twilight.fibermap none twi
+ut20231007 0128 0140 0134 0129-0133-0138 fornax10k_p3_f1-3 0130-0131-0132-0135-0136-0137 /hildafs/projects/phy200028p/mgwalker/m2fs/m2fs.astro.lsa.umich.edu/data/Oct2023/fibermaps/Plate3_For10k_2023B-plate3_field3_2023B-1b-95d76f.fibermap none for #check updated frame numbers
+ut20231008 0401 0408 0408 0406 twilight3 0402-0403-0404-0405 twilight.fibermap none twi
+ut20231008 0409 0416 0416 0410-0415 tuc2 0412-0413-0414 /hildafs/projects/phy200028p/mgwalker/m2fs/m2fs.astro.lsa.umich.edu/data/Oct2023/fibermaps/Tuc2_May2022-Tuc2_May2022-1b.fibermap B4-07>B8-16,B5-04>B7-15,R5-04>R7-13,R5-12>R7-07,B3-04>B7-10 tuc2
+ut20231008 0417 0424 0424 0417-0423 fornax10k_p1_f1-2 0419-0420-0421 /hildafs/projects/phy200028p/mgwalker/m2fs/m2fs.astro.lsa.umich.edu/data/Oct2023/fibermaps/Plate1_For10k_2023B-plate1_field2_2023B-1b-e71bce.fibermap none for
+ut20231009 0515 0523 0516 0515-0521 fornax10k_p5_field2-1 0518-0519-0520 /hildafs/projects/phy200028p/mgwalker/m2fs/m2fs.astro.lsa.umich.edu/data/Oct2023/fibermaps/Plate5_For10k_2023B-plate5_field2-1_2023B-1b.fibermap none for
+ut20231010 0701 0708 0707 0708 twilight4 0702-0703-0704-0705-0706 twilight.fibermap none twi
+ut20231010 0717 0724 0717 0718-0723 fornax10k_p5_f3-1 0720-0721-0722 /hildafs/projects/phy200028p/mgwalker/m2fs/m2fs.astro.lsa.umich.edu/data/Oct2023/fibermaps/Plate5_For10k_2023B-plate5_field3-1_2023B-1b.fibermap none for
+ut20231010 0709 0716 0716 0709-0715 scl_563 0712-0713-0714 /hildafs/projects/phy200028p/mgwalker/m2fs/m2fs.astro.lsa.umich.edu/data/Oct2023/fibermaps/WalkerMateo_Scl_2019B-Scl_Gaia_563-1b.fibermap none scl
+ut20231011 0811 0817 0817 0816 twilight5 0812-0813-0814 twilight.fibermap none twi
+ut20231011 0818 0823 0823 0814-0822 scl_569 0820-0821 /hildafs/projects/phy200028p/mgwalker/m2fs/m2fs.astro.lsa.umich.edu/data/Oct2023/fibermaps/WalkerMateo_Scl_2019B-Scl_Gaia_569-1b.fibermap none scl
+ut20231011 0824 0832 0832 0825-0831 fornax10k_p1_f1-3 0827-0828-0829-0830 /hildafs/projects/phy200028p/mgwalker/m2fs/m2fs.astro.lsa.umich.edu/data/Oct2023/fibermaps/Plate1_For10k_2023B-plate1_field3_2023B-1b-cf36fd.fibermap none for
+ut20231012 1058 1065 1064 1065 twilight6 1058-1059-1060-1061-1062 twilight.fibermap none twi
+ut20231012 1066 1074 1067 1066-1073 ngc288 1070-1071-1072 /hildafs/projects/phy200028p/mgwalker/m2fs/m2fs.astro.lsa.umich.edu/data/Oct2023/fibermaps/Li_GCs_2019B-NGC_288-48.fibermap none n288
+ut20231012 1075 1081 1080 1076-1081 fornax10k_p3_f1-1 1078-1079 /hildafs/projects/phy200028p/mgwalker/m2fs/m2fs.astro.lsa.umich.edu/data/Oct2023/fibermaps/Plate3_For10k_2023B-plate3_field1_2023B-1b.fibermap none for
+ut20231012 1082 1088 1083 1082-1087 fornax10k_p2_f1-2 1084-1085-1086 /hildafs/projects/phy200028p/mgwalker/m2fs/m2fs.astro.lsa.umich.edu/data/Oct2023/fibermaps/Plate2_For10k_2023B-plate2_field2_2023B-1b-e3d801.fibermap none for
+ut20231012 1084 1095 1094 1090-1095 fornax10k_p1_f1-1 1091-1092-1093 /hildafs/projects/phy200028p/mgwalker/m2fs/m2fs.astro.lsa.umich.edu/data/Oct2023/fibermaps/Plate1_For10k_2023B-plate1_field1_2023B-1b.fibermap none for
