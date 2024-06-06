@@ -286,7 +286,7 @@ if id_lines_check:
         id_lines_check0=m2fs.get_id_lines_template(extract1d_array[0],linelist,id_lines_continuum_rejection_low,id_lines_continuum_rejection_high,id_lines_continuum_rejection_iterations,id_lines_threshold_factor,id_lines_window,id_lines_order,id_lines_continuum_rejection_iterations,id_lines_continuum_rejection_sigma,id_lines_tol_angs,id_lines_template_fiddle,id_lines_array[0],resolution_order,resolution_rejection_iterations)
 
 for i in range(0,len(utdate)):
-    for ccd in ('r','b'):
+    for ccd in ('b','r'):
         root=datadir+utdate[i]+'/'+ccd+str(flatfile[i]).zfill(4)
         root2=datadir+utdate[i]+'/'+ccd+'_'+field_name[i]+'_'+m2fsrun
         data_file=root+'_stitched.fits'
@@ -536,7 +536,6 @@ for i in range(0,len(utdate)):
                 apertures_profile_middle,middle_column=pickle.load(open(apertures_profile_middle_file,'rb'))
                 aperture_array=[]
                 for j in range(0,len(apertures_profile_middle.fit)):
-                    print(j)
                     aperture_array.append(m2fs.get_aperture(j,columnspec_array,apertures_profile_middle,middle_column,trace_order,trace_rejection_sigma,trace_rejection_iterations,image_boundary,trace_shift_max,trace_nlost_max,profile_rejection_iterations,profile_nsample,profile_order,window))
 
                 pickle.dump(aperture_array,open(aperture_array_file,'wb'))
@@ -1390,7 +1389,8 @@ for i in range(0,len(utdate)):
             twi_filtername=np.array(twi_filtername)
 
             for j in range(0,len(allfile0[i])):
-                if ((allfile0[i][j] not in tharfile0[i])&(allfile0[i][j] not in flatfile0[i])&(allfile0[i] not in mapfile0.flatten())):#no need to do this for thars or flats
+                #if ((allfile0[i][j] not in tharfile0[i])&(allfile0[i][j] not in flatfile0[i])&(allfile0[i] not in mapfile0.flatten())):#no need to do this for thars or flats
+                if ((allfile0[i][j] not in tharfile0[i])&(allfile0[i][j] not in flatfile0[i])):#no need to do this for thars or flats
                     root0=datadir+utdate[i]+'/'+ccd+str(allfile0[i][j]).zfill(4)
                     data_file=root0+'_stitched.fits'
                     data=astropy.nddata.CCDData.read(data_file)#format is such that data.data[:,0] has column-0 value in all rows
