@@ -51,7 +51,7 @@ with open(directory+'m2fs_apertures0.py') as f:
 with open(directory+'m2fs_apertures_noflat0.py') as f:
     apertures_noflat_text=f.readlines()[0:]
 
-m2fsrun0=['feb14','dec14','feb15','jul15','sep15','nov15','feb16','jun16','aug16','nov16','feb17','may17','sep17','nov17','feb18','may18','aug18','nov18','feb19','may19','aug19','nov19','jan20','may22','nov22','oct23','feb24']
+m2fsrun0=['feb14','dec14','feb15','jul15','sep15','nov15','feb16','jun16','aug16','nov16','feb17','may17','sep17','nov17','feb18','may18','aug18','nov18','feb19','may19','aug19','nov19','jan20','may22','nov22','oct23','feb24','may24']
 #m2fsrun0=['aug16']
 
 for i in range(0,len(m2fsrun0)):

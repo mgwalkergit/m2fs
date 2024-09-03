@@ -1,0 +1,215 @@
+import numpy as np
+import matplotlib
+#matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+from astropy.io import fits 
+from scipy import stats
+import random
+import mycode2
+np.set_printoptions(threshold='nan')
+
+#plt.rc('grid',alpha=0.7) # modify rcparams
+#plt.rc('grid',color='white')
+#plt.rc('grid',linestyle='-')
+plt.rc('legend',frameon='False')
+plt.rc('xtick.major',size=2)
+plt.rc('ytick.major',size=2)
+plt.rc('axes',axisbelow='True')
+plt.rc('axes',grid='False')
+plt.rc('axes',facecolor='white')
+plt.rc('axes',linewidth=0.5)
+plt.rc('xtick.major',width=0.5)
+plt.rc('ytick.major',width=0.5)
+plt.rc('xtick',direction='in')
+plt.rc('ytick',direction='in')
+plt.rc('xtick',labelsize='8')
+plt.rc('ytick',labelsize='8')
+plt.rc('text',usetex='True')
+plt.rc('font',family='serif')
+plt.rc('font',style='normal')
+plt.rc('font',serif='Century')
+plt.rc('savefig',format='eps')
+plt.rc('lines',markeredgewidth=0)
+plt.rc('lines',markersize=2)
+plt.rc('path',simplify='True')
+            
+data1='gru1_phoenix_gradientpost_equal_weights.dat'
+
+with open(data1) as f: # read data file
+    data=f.readlines()
+
+vmean=[]
+vdisp=[]
+vgrad=[]
+vtheta=[]
+fehmean=[]
+fehdisp=[]
+fehgrad=[]
+like=[]
+
+for line in data: # fill arrays
+    p=line.split()
+    vmean.append(float(p[0]))
+    vdisp.append(float(p[1]))
+    vgrad.append(float(p[2]))
+    vtheta.append(float(p[3]))
+    fehmean.append(float(p[4]))
+    fehdisp.append(float(p[5]))
+    fehgrad.append(float(p[6]))
+    like.append(float(p[7]))
+
+vmean=np.array(vmean)
+vdisp=np.array(vdisp)
+vgrad=np.array(vgrad)
+vtheta=np.array(vtheta)
+fehmean=np.array(fehmean)
+fehdisp=np.array(fehdisp)
+fehgrad=np.array(fehgrad)
+like=np.array(like)
+
+gs=plt.GridSpec(16,16) # define multi-panel plot
+gs.update(wspace=0,hspace=0) # specify inter-panel spacing
+fig=plt.figure(figsize=(6,6)) # define plot size
+#fig.set_
+
+
+#statsvmean=np.array([mycode2.hpd(vmean,0.05)[0],mycode2.hpd(vmean,0.32)[0],(vmean[like == max(like)])[0],mycode2.hpd(vmean,0.32)[1],mycode2.hpd(vmean,0.05)[1]])
+#statsvdisp=np.array([mycode2.hpd(vdisp,0.05)[0],mycode2.hpd(vdisp,0.32)[0],(vdisp[like == max(like)])[0],mycode2.hpd(vdisp,0.32)[1],mycode2.hpd(vdisp,0.05)[1]])
+#statsvgrad=np.array([mycode2.hpd(vgrad,0.05)[0],mycode2.hpd(vgrad,0.32)[0],(vgrad[like == max(like)])[0],mycode2.hpd(vgrad,0.32)[1],mycode2.hpd(vgrad,0.05)[1]])
+#statsvtheta=np.array([mycode2.hpd(vtheta,0.05)[0],mycode2.hpd(vtheta,0.32)[0],(vtheta[like == max(like)])[0],mycode2.hpd(vtheta,0.32)[1],mycode2.hpd(vtheta,0.05)[1]])
+#statsfehdisp=np.array([mycode2.hpd(fehdisp,0.05)[0],mycode2.hpd(fehdisp,0.32)[0],(fehdisp[like == max(like)])[0],mycode2.hpd(fehdisp,0.32)[1],mycode2.hpd(fehdisp,0.05)[1]])
+#statsfehmean=np.array([mycode2.hpd(fehmean,0.05)[0],mycode2.hpd(fehmean,0.32)[0],(fehmean[like == max(like)])[0],mycode2.hpd(fehmean,0.32)[1],mycode2.hpd(fehmean,0.05)[1]])
+#statsfehgrad=np.array([mycode2.hpd(fehgrad,0.05)[0],mycode2.hpd(fehgrad,0.32)[0],(fehgrad[like == max(like)])[0],mycode2.hpd(fehgrad,0.32)[1],mycode2.hpd(fehgrad,0.05)[1]])
+#
+#statsvmean2=np.array([mycode2.hpd(vmean2,0.05)[0],mycode2.hpd(vmean2,0.32)[0],(vmean2[like2 == max(like2)])[0],mycode2.hpd(vmean2,0.32)[1],mycode2.hpd(vmean2,0.05)[1]])
+#statsvdisp2=np.array([mycode2.hpd(vdisp2,0.05)[0],mycode2.hpd(vdisp2,0.32)[0],(vdisp2[like2 == max(like2)])[0],mycode2.hpd(vdisp2,0.32)[1],mycode2.hpd(vdisp2,0.05)[1]])
+#statsvgrad2=np.array([mycode2.hpd(vgrad2,0.05)[0],mycode2.hpd(vgrad2,0.32)[0],(vgrad2[like2 == max(like2)])[0],mycode2.hpd(vgrad2,0.32)[1],mycode2.hpd(vgrad2,0.05)[1]])
+#statsvtheta2=np.array([mycode2.hpd(vtheta2,0.05)[0],mycode2.hpd(vtheta2,0.32)[0],(vtheta2[like2 == max(like2)])[0],mycode2.hpd(vtheta2,0.32)[1],mycode2.hpd(vtheta2,0.05)[1]])
+#statsfehdisp2=np.array([mycode2.hpd(fehdisp2,0.05)[0],mycode2.hpd(fehdisp2,0.32)[0],(fehdisp2[like2 == max(like2)])[0],mycode2.hpd(fehdisp2,0.32)[1],mycode2.hpd(fehdisp2,0.05)[1]])
+#statsfehmean2=np.array([mycode2.hpd(fehmean2,0.05)[0],mycode2.hpd(fehmean2,0.32)[0],(fehmean2[like2 == max(like2)])[0],mycode2.hpd(fehmean2,0.32)[1],mycode2.hpd(fehmean2,0.05)[1]])
+#statsfehgrad2=np.array([mycode2.hpd(fehgrad2,0.05)[0],mycode2.hpd(fehgrad2,0.32)[0],(fehgrad2[like2 == max(like2)])[0],mycode2.hpd(fehgrad2,0.32)[1],mycode2.hpd(fehgrad2,0.05)[1]])
+
+statsvmean=np.percentile(vmean,[2.5,16.,50.,84.,97.5])
+statsvdisp=np.percentile(vdisp,[2.5,16.,50.,84.,97.5])
+statsvgrad=np.percentile(vgrad,[2.5,16.,50.,84.,97.5])
+statsvtheta=np.percentile(vtheta,[2.5,16.,50.,84.,97.5])
+statsfehdisp=np.percentile(fehdisp,[2.5,16.,50.,84.,97.5])
+statsfehmean=np.percentile(fehmean,[2.5,16.,50.,84.,97.5])
+statsfehgrad=np.percentile(fehgrad,[2.5,16.,50.,84.,97.5])
+
+ax11_0=fig.add_subplot(gs[2:4,0:4])
+ax10_0=fig.add_subplot(gs[4:8,0:4])
+ax11_1=fig.add_subplot(gs[4:8,4:6])
+
+ax0_0=fig.add_subplot(gs[10:12,0:4])
+ax1_0=fig.add_subplot(gs[12:16,0:4])
+ax1_1=fig.add_subplot(gs[12:16,4:6])
+
+#    ax0_12=fig.add_subplot(gs[0,12])
+vmeanlim=[-160,-115]
+vdisplim=[0,12]
+vgradlim=[0,4.5]
+vthetalim=[-179,179]
+fehmeanlim=[-4.99,0.99] 
+fehdisplim=[0.01,1.5]
+fehgradlim=[-0.99,0.99]  
+
+vmeanticks=[-160,-145,-130,-115]
+vdispticks=[0,2,4,6,8,10]
+vgradticks=[1,2,3,4]
+vthetaticks=[-150,0,150]
+fehmeanticks=[-4,-3,-2,-1,0]
+fehdispticks=[0.,0.5,1]
+fehgradticks=[-0.5,0,0.5]
+
+vmeanlabel=[r'$\langle v_{\rm los}\rangle $ [km/s]']
+vdisplabel=[r'$\sigma_{v_{\rm los}}$ [km/s]']
+vgradlabel=[r'$k_{v_{\rm los}} $ $\bigl[ \frac{\rm km/s}{\prime}\bigr ]$']
+vthetalabel=[r'$\theta_0$ $[^{\circ}]$']
+fehmeanlabel=[r'$\langle [\mathrm{Fe/H}]\rangle $ [dex]']
+fehdisplabel=[r'$\sigma_{[\mathrm{Fe/H}]}$ [dex]']
+fehgradlabel=[r'$k_{[\mathrm{Fe/H}]} $ $\bigl [ \frac{\rm dex}{\prime}\bigr ]$']
+
+ax1_0.set_xlabel(vmeanlabel[0],fontsize=10,rotation=0)
+ax1_0.set_ylabel(vdisplabel[0],fontsize=10,rotation=90,labelpad=1)
+ax1_0.set_xlim(vmeanlim)
+ax1_0.set_ylim(vdisplim)
+ax1_0.set_xscale(u'linear')
+ax1_0.set_yscale(u'linear')
+ax1_0.set_xticks(vmeanticks)
+ax1_0.set_xticklabels(vmeanticks,rotation=0)
+ax1_0.set_yticks(vdispticks)
+ax1_0.set_yticklabels(vdispticks,rotation=0)
+#ax1_0.scatter(vmean2,vdisp2,s=1,lw=0,edgecolor='none',alpha=0.75,marker='.',color='b',rasterized=True)
+ax1_0.scatter(vmean,vdisp,s=1,lw=0,edgecolor='none',alpha=0.35,marker='.',color='k',rasterized=True)
+#ax1_0.text(56,17,r'$\frac{\overline{v}_{\rm los}}{\mathrm{km/s}}=',fontsize=5,color='k')
+#ax1_0.text(62,17.2,r'$'+str(round(statsvmean[2],2))+r'_{'+str(round(statsvmean[1]-statsvmean[2],2))+r'}'+r'^{+'+str(round(statsvmean[3]-statsvmean[2],2))+r'},$',fontsize=4.6,color='k')
+#ax1_0.text(69,17.2,r'$'+str(round(statsvmean2[2],2))+r'_{'+str(round(statsvmean2[1]-statsvmean2[2],2))+r'}'+r'^{+'+str(round(statsvmean2[3]-statsvmean2[2],2))+r'},$',fontsize=4.6,color='b')
+#ax1_0.text(56,14.,r'$\frac{\sigma_{v_{\rm los}}}{\mathrm{km/s}}=$',fontsize=5,color='k')
+#ax1_0.text(62,14.5,r'$'+str(round(statsvdisp[2],2))+r'_{'+str(round(statsvdisp[1]-statsvdisp[2],2))+r'}'+r'^{+'+str(round(statsvdisp[3]-statsvdisp[2],2))+r'},$',fontsize=4.6,color='k')
+#ax1_0.text(69,14.5,r'$'+str(round(statsvdisp2[2],2))+r'_{'+str(round(statsvdisp2[1]-statsvdisp2[2],2))+r'}'+r'^{+'+str(round(statsvdisp2[3]-statsvdisp2[2],2))+r'},$',fontsize=4.6,color='b')
+
+
+#ax1_0.text(57,14,r'$\sigma_{v_{\rm los}}='+str(round(statsvdisp[2],2))+r'_{'+str(round(statsvdisp[1]-statsvdisp[2],2))+r'}'+r'^{+'+str(round(statsvdisp[3]-statsvdisp[2],2))+r'}$'+' km/s',fontsize=5)
+
+ax0_0.set_ylabel('probability',fontsize=8,rotation=90,labelpad=1)
+ax0_0.xaxis.set_major_formatter(plt.NullFormatter())
+ax0_0.set_xticks(vmeanticks)
+ax0_0.yaxis.set_major_formatter(plt.NullFormatter())
+#ax0_0.hist(vmean2,bins=50,range=vmeanlim,normed=True,histtype='step',align='mid',rwidth=0,orientation='vertical',color='b',linewidth=0.5)
+ax0_0.hist(vmean,bins=50,range=vmeanlim,normed=True,histtype='step',align='mid',rwidth=0,orientation='vertical',color='k',linewidth=0.5)
+
+ax1_1.set_xlabel('probability',fontsize=8,rotation=00,labelpad=10)
+ax1_1.xaxis.set_major_formatter(plt.NullFormatter())
+ax1_1.set_yticks(vdispticks)
+ax1_1.set_ylim(vdisplim)
+ax1_1.yaxis.set_major_formatter(plt.NullFormatter())
+#ax1_1.hist(vdisp2,bins=50,range=vdisplim,normed=True,histtype='step',align='mid',rwidth=0,orientation='horizontal',color='b',linewidth=0.5)
+ax1_1.hist(vdisp,bins=50,range=vdisplim,normed=True,histtype='step',align='mid',rwidth=0,orientation='horizontal',color='k',linewidth=0.5)
+
+
+
+
+
+ax10_0.set_xlabel(fehmeanlabel[0],fontsize=10,rotation=0)
+ax10_0.set_ylabel(fehdisplabel[0],fontsize=10,rotation=90,labelpad=1)
+ax10_0.set_xlim(fehmeanlim)
+ax10_0.set_ylim(fehdisplim)
+ax10_0.set_xscale(u'linear')
+ax10_0.set_yscale(u'linear')
+ax10_0.set_xticks(fehmeanticks)
+ax10_0.set_xticklabels(fehmeanticks,rotation=0)
+ax10_0.set_yticks(fehdispticks)
+ax10_0.set_yticklabels(fehdispticks,rotation=0)
+#ax10_0.scatter(fehmean2,fehdisp2,s=1,lw=0,edgecolor='none',alpha=0.75,marker='.',color='b',rasterized=True)
+ax10_0.scatter(fehmean,fehdisp,s=1,lw=0,edgecolor='none',alpha=0.35,marker='.',color='k',rasterized=True)
+#ax10_0.text(-4.7,1.75,r'$\overline{\mathrm{[Fe/H]}}=$',fontsize=5,color='k')
+#ax10_0.text(-2.89,1.72,r'$'+str(round(statsfehmean[2],2))+r'_{'+str(round(statsfehmean[1]-statsfehmean[2],2))+r'}'+r'^{+'+str(round(statsfehmean[3]-statsfehmean[2],2))+r'},$',fontsize=4.6,color='k')
+#ax10_0.text(-0.9,1.72,r'$'+str(round(statsfehmean2[2],2))+r'_{'+str(round(statsfehmean2[1]-statsfehmean2[2],2))+r'}'+r'^{+'+str(round(statsfehmean2[3]-statsfehmean2[2],2))+r'},$',fontsize=4.6,color='b')
+#ax10_0.text(-4.7,1.4,r'$\sigma_{\mathrm{[Fe/H]}}=$',fontsize=5,color='k')
+#ax10_0.text(-2.49,1.4,r'$'+str(round(statsfehdisp[2],2))+r'_{'+str(round(statsfehdisp[1]-statsfehdisp[2],2))+r'}'+r'^{+'+str(round(statsfehdisp[3]-statsfehdisp[2],2))+r'},$',fontsize=4.6,color='k')
+#ax10_0.text(-0.65,1.4,r'$'+str(round(statsfehdisp2[2],2))+r'_{'+str(round(statsfehdisp2[1]-statsfehdisp2[2],2))+r'}'+r'^{+'+str(round(statsfehdisp2[3]-statsfehdisp2[2],2))+r'},$',fontsize=4.6,color='b')
+
+#ax10_0.text(-4.2,1.7,r'$\overline{\rm [Fe/H]}='+str(round(statsfehmean[2],2))+r'_{'+str(round(statsfehmean[1]-statsfehmean[2],2))+r'}'+r'^{+'+str(round(statsfehmean[3]-statsfehmean[2],2))+r'}$',fontsize=5)
+#ax10_0.text(-4.2,1.4,r'$\sigma_{\rm [Fe/H]}='+str(round(statsfehdisp[2],2))+r'_{'+str(round(statsfehdisp[1]-statsfehdisp[2],2))+r'}'+r'^{+'+str(round(statsfehdisp[3]-statsfehdisp[2],2))+r'}$',fontsize=5)
+
+ax11_0.set_ylabel('probability',fontsize=8,rotation=90,labelpad=1)
+ax11_0.xaxis.set_major_formatter(plt.NullFormatter())
+ax11_0.set_xticks(fehmeanticks)
+ax11_0.yaxis.set_major_formatter(plt.NullFormatter())
+#ax11_0.hist(fehmean2,bins=50,range=fehmeanlim,normed=True,histtype='step',align='mid',rwidth=0,orientation='vertical',color='b',linewidth=0.5)
+ax11_0.hist(fehmean,bins=50,range=fehmeanlim,normed=True,histtype='step',align='mid',rwidth=0,orientation='vertical',color='k',linewidth=0.5)
+
+ax11_1.set_xlabel('probability',fontsize=8,rotation=00,labelpad=10)
+ax11_1.xaxis.set_major_formatter(plt.NullFormatter())
+ax11_1.set_yticks(fehdispticks)
+ax11_1.set_ylim(fehdisplim)
+ax11_1.yaxis.set_major_formatter(plt.NullFormatter())
+#ax11_1.hist(fehdisp2,bins=50,range=fehdisplim,normed=True,histtype='step',align='mid',rwidth=0,orientation='horizontal',color='b',linewidth=0.5)
+ax11_1.hist(fehdisp,bins=50,range=fehdisplim,normed=True,histtype='step',align='mid',rwidth=0,orientation='horizontal',color='k',linewidth=0.5)
+
+
+plotfilename='gru1_phoenix_meansdispersions.pdf'
+plt.savefig(plotfilename,dpi=400)
+plt.show()
+plt.close()

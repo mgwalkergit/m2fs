@@ -30,14 +30,14 @@ from pymultinest.solve import solve
 from pymultinest import Analyzer
 #matplotlib.use('pdf')
 
-get_surveyphot=False#pull photometry for each spectroscopic target from various sky surveys
+get_surveyphot=True#pull photometry for each spectroscopic target from various sky surveys
 get_obstable=False#write observation log in latex table
 fit_continuum=False
 make_skysub=False#generate 1d sky-subtracted spectra?
 get_fits=False#fit is done, do post-processing of multinest output
 get_catalog_raw=False#catalog post-processed data
 get_errors=False#fit error models using repeat observations
-get_catalog_final=True#update catalog for calibrated errors
+get_catalog_final=False#update catalog for calibrated errors
 check_badfield=False
 
 data_directory='/hildafs/projects/phy200028p/mgwalker/m2fs_data/'
